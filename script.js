@@ -13,12 +13,15 @@ function getComputerChoice() {
 }
 
 function getUserChoice() {
-    return prompt("Enter jan, ken or pon").toLowerCase();
+    const choice = document.querySelector(".choice");
+    choice.addEventListener("click", (e) => {
+        if (this.id === "jan") {
+            console.log("perra");
+        }
+    })
 }
 
 function round(user, com) {
-    // console.log(user);
-    // console.log(com);
     if (user === "jan" && com === "jan") {
         console.log("It's a draw!"); 
         return round(getUserChoice(), getComputerChoice())
@@ -66,9 +69,6 @@ function game() {
         return 0;
     }
 }
-
-// let comChoice = getComputerChoice();
-// let userChoice = getUserChoice();
 
 game();
 
