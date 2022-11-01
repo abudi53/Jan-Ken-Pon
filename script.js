@@ -12,25 +12,30 @@ function getComputerChoice() {
     }
 }
 
-function getUserChoice() {
-    const choice = document.querySelector(".choice");
-    choice.addEventListener("click", (e) => {
-        if (this.id === "jan") {
-            console.log("perra");
-        }
-    })
+function getUserChoice(e) {
+    rounds += 1;
+    const com = getComputerChoice()
+    const user = this.id
+    if (round(user, com) === 1) {
+        points += 1;
+    }
+    if (rounds == 3 && points > 1) {
+        console.log("you won");
+    }
+
 }
 
 function round(user, com) {
+
     if (user === "jan" && com === "jan") {
         console.log("It's a draw!"); 
-        return round(getUserChoice(), getComputerChoice())
+        return 0;
     }else if (user === "ken" && com === "ken") {
         console.log("It's a draw!");
-        return round(getUserChoice(), getComputerChoice())
+        return 0;
     }else if (user === "pon" && com === "pon") {
         console.log("It's a draw!");
-        return round(getUserChoice(), getComputerChoice())
+        return 0;
     }else if (user === "jan" && com === "ken") {
         console.log("You lose!");
         return 0
@@ -52,24 +57,9 @@ function round(user, com) {
     }
 }
 
-function game() {
-    let points = 0
-    console.log("This is for 3 rounds, play!");
-    
-    for (let index = 0; index < 3; index++) {
-        if (round(getUserChoice(), getComputerChoice()) === 1) {
-            points += 1;
-        }
-    }
-    if (points > 1) {
-        console.log("Wow! you won the game!");
-        return 1;
-    }else{
-        console.log("You lost");
-        return 0;
-    }
-}
+let rounds = 0;
+let points = 0;
 
-game();
+const choices = Array.from(document.querySelectorAll(".choice"));
 
-
+choices.forEach(choice => choice.addEventListener("click", getUserChoice));
