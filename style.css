@@ -26,7 +26,8 @@ html, body {
 
 .choice {
     flex: 1;
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 15px;
 
 }
 
@@ -34,4 +35,17 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 12px;
+}
+
+.containerActualChoice {
+    display: flex;
+    height: 20vh;
+    gap: 4.5vw;
+    margin: 10vh 35vw;
+}
+
+.actualChoice {
+    border: 1px solid black;
+    flex: 1;
 }

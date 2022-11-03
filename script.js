@@ -14,13 +14,16 @@ function getComputerChoice() {
 
 function getUserChoice(e) {
     rounds += 1;
+    setTimeout()
     const com = getComputerChoice()
     const user = this.id
     if (round(user, com) === 1) {
         points += 1;
     }
     if (rounds == 3 && points > 1) {
-        console.log("you won");
+        console.log("you won the game");
+    }else if (rounds == 3 && points <= 1) {
+        console.log("You lost the game");
     }
 
 }
@@ -29,12 +32,15 @@ function round(user, com) {
 
     if (user === "jan" && com === "jan") {
         console.log("It's a draw!"); 
+        rounds -= 1;
         return 0;
     }else if (user === "ken" && com === "ken") {
         console.log("It's a draw!");
+        rounds -= 1;
         return 0;
     }else if (user === "pon" && com === "pon") {
         console.log("It's a draw!");
+        rounds -= 1;
         return 0;
     }else if (user === "jan" && com === "ken") {
         console.log("You lose!");
