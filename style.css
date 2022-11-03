@@ -49,3 +49,14 @@ img {
     border: 1px solid black;
     flex: 1;
 }
+
+.ganaste, .perdiste {
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+}
+
+/* .mostrar {
+    display: flex;
+    
+} */

@@ -1,22 +1,30 @@
 function getComputerChoice() {
+    let imgSmallCom = document.querySelector("#com")
     let random = Math.floor(Math.random() * 3) + 1
     if (random === 1) {
         console.log("Computer played jan!");
+        imgSmallCom.src = document.querySelector("#jan").src
         return "jan";
     }else if (random === 2) {
         console.log("Computer played ken!");
+        imgSmallCom.src = document.querySelector("#ken").src
         return "ken";
     }else if (random === 3) {
         console.log("Computer played pon!");
+        imgSmallCom.src = document.querySelector("#pon").src
         return "pon";
     }
 }
 
 function getUserChoice(e) {
+    
     rounds += 1;
-    setTimeout()
     const com = getComputerChoice()
     const user = this.id
+    let imgSmallUser = document.querySelector("#user");
+    imgSmallUser.src = this.src
+
+
     if (round(user, com) === 1) {
         points += 1;
     }
@@ -66,6 +74,6 @@ function round(user, com) {
 let rounds = 0;
 let points = 0;
 
-const choices = Array.from(document.querySelectorAll(".choice"));
+const choices = Array.from(document.querySelectorAll(".imgChoice"));
 
 choices.forEach(choice => choice.addEventListener("click", getUserChoice));
