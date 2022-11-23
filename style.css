@@ -42,21 +42,36 @@ img {
     display: flex;
     height: 20vh;
     gap: 4.5vw;
-    margin: 10vh 35vw;
+    margin: 10vh 15vw;
+}
+
+.label {
+    font-weight: 900;
+    font-size: 3rem;
+    color: aquamarine;
 }
 
 .actualChoice {
     border: 1px solid black;
+    border-radius: 15px;
     flex: 1;
 }
 
-.ganaste, .perdiste {
-    display: flex;
+.result {
+    display: none;
     font-size: 3rem;
-    justify-content: center;
+    justify-content: center;   
 }
 
-/* .mostrar {
+#win {
+    color: rgb(80, 201, 80);
+}
+
+#lose {
+    color: red;
+}
+
+.show {
     display: flex;
     
-} */
+} 

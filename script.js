@@ -29,8 +29,12 @@ function getUserChoice(e) {
         points += 1;
     }
     if (rounds == 3 && points > 1) {
+        let result = document.getElementById("win");
+        result.classList.add("show")
         console.log("you won the game");
     }else if (rounds == 3 && points <= 1) {
+        let result = document.getElementById("lose");
+        result.classList.add("show")
         console.log("You lost the game");
     }
 
